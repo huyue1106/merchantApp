@@ -1,4 +1,5 @@
-<view>
-  <order-form orderList="{{orderList}}">
-  </order-form>
-</view>
+<!-- 组件模板 -->
+<order-form submit="{{submit}}" list="{{list}}">
+  <button>aaaa</button>
+  <button>bbbb</button>
+</order-form>

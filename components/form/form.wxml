@@ -1,60 +1,65 @@
 <!-- 组件模板 -->
 <form bindsubmit="formSubmit" bindreset="formReset">
-  <view class="form-cells">
-    <view wx:for="{{orderList}}" wx:key="index" wx:for-item="item">
-      <view class="form-cell">
-        <view class="form-ld">
-          <view form-label>{{item.label}}</view>
-        </view>
-        <view wx:if="{{item.isInput}}" class="form-rd">
-          <input disabled="{{item.isdisabled}}" class="form-input" name="{{item.name}}" value="{{item.name}}"></input>
-        </view>
-        <!-- 日期picker -->
-        <view wx:if="{{item.isDate}}" class="form-rd">
-          <picker mode="date" name="{{item.name}}" start="{{item.startDate}}" end="{{item.endDate}}" bindchange="bindDateChange">
-            <view>{{date}}</view>
-          </picker>
-        </view>
-        <!-- 时间picker -->
-        <view wx:if="{{item.isTime}}" class="form-rd">
-          <picker mode="time" name="{{item.name}}" start="{{item.startTime}}" end="{{item.startTime}}" bindchange="bindTimeChange">
-          <view>{{time}}</view>
-          </picker>
-        </view>
-        <!-- 省市picker -->
-        <view wx:if="{{item.isCity}}" class="form-rd">
-          <picker mode="region" name="{{item.name}}" bindchange="bindRegionChange" value="{{region}}">
-            <view class="picker">
-              {{region[0]}}{{region[1]}}{{region[2]}}
-            </view>
-          </picker>
-        </view>
-        <!-- 普通picker -->
-        <view wx:if="{{item.isGeneral}}" class="form-rd">
-          <picker name="{{item.name}}" bindchange="bindPickerChange" range="{{item.array}}">
-            <view class="picker">
-              {{item.array[i] ? item.array[i]:'请选择'}}
-            </view>
-          </picker>
-        </view>
-        <!-- textarea -->
-        <view wx:if="{{item.isTextarea}}" class="form-rd">
-          <textarea name="{{item.name}}" class="form-textarea" placeholder="{{item.placeholder}}" />
-        </view>
-        <!-- radio -->
-        <view wx:if="{{item.isRadio}}" class="form-rd">
-          <radio-group name="{{item.name}}" class="radio-group" bindchange="radioChange">
-            <label class="radio" wx:key="idx" wx:for="{{item.radioList}}">
-              <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
-            </label>
-          </radio-group>
+  <view wx:for="{{list}}" wx:key="k" wx:for-item="i">
+    <view class="form-title">{{i.title}}</view>
+    <view class="form-cells">
+      <view wx:for="{{i.childList}}" wx:key="index" wx:for-item="item">
+        <view class="form-cell">
+          <view class="form-ld">
+            <view form-label>{{item.label}}</view>
+          </view>
+          <view wx:if="{{item.isInput}}" class="form-rd">
+            <input disabled="{{item.isdisabled}}" class="form-input" name="{{item.name}}" value="{{item.value}}" placeholder="{{item.placeholder}}"></input>
+          </view>
+          <!-- 日期picker -->
+          <view wx:if="{{item.isDate}}" class="form-rd">
+            <picker mode="date" name="{{item.name}}" start="{{item.startDate}}" end="{{item.endDate}}" bindchange="bindDateChange">
+              <input disabled placeholder="{{item.placeholder}}" value="{{date}}"></input>
+            </picker>
+          </view>
+          <!-- 时间picker -->
+          <view wx:if="{{item.isTime}}" class="form-rd">
+            <picker mode="time" name="{{item.name}}" start="{{item.startTime}}" end="{{item.endTime}}" bindchange="bindTimeChange">
+              <input disabled placeholder="{{item.placeholder}}" value="{{time}}"></input>
+            </picker>
+          </view>
+          <!-- 省市picker -->
+          <view wx:if="{{item.isCity}}" class="form-rd">
+            <picker mode="region" name="{{item.name}}" bindchange="bindRegionChange" value="{{region}}">
+              <!-- <view class="picker">
+                {{region[0]}}{{region[1]}}{{region[2]}}
+              </view> -->
+              <input disabled placeholder="{{item.placeholder}}" value="{{region[0]}}{{region[1]}}{{region[2]}}"></input>
+            </picker>
+          </view>
+          <!-- 普通picker -->
+          <view wx:if="{{item.isGeneral}}" class="form-rd">
+            <picker name="{{item.name}}" bindchange="bindPickerChange" range="{{item.array}}">
+              <!-- <view class="picker">
+              {{item.array[i]}}
+              </view> -->
+              <input disabled placeholder="{{item.placeholder}}" value="{{item.array[j]}}"></input>
+            </picker>
+          </view>
+          <!-- textarea -->
+          <view wx:if="{{item.isTextarea}}" class="form-rd">
+            <textarea name="{{item.name}}" class="form-textarea" placeholder="{{item.placeholder}}" />
+          </view>
+          <!-- radio -->
+          <view wx:if="{{item.isRadio}}" class="form-rd">
+            <radio-group name="{{item.name}}" class="radio-group" bindchange="radioChange">
+              <label class="radio" wx:key="idx" wx:for="{{item.radioList}}">
+                <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+              </label>
+            </radio-group>
+          </view>
         </view>
       </view>
     </view>
   </view>
-
   <view class="btn-area">
-    <button form-type="submit">Submit</button>
-    <button form-type="reset">Reset</button>
+    <button wx:if="{{submit}}" form-type="submit">Submit</button>
+    <button wx:if="{{reset}}" form-type="reset">Reset</button>
+    <slot></slot>
   </view>
 </form>

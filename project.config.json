@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.4",
 	"appid": "wx84dc9384ae006d28",
-	"projectname": "merchantApp",
+	"projectname": "car-server-app",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
