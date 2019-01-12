@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "waitingOrder/pages/index/index",
+    "waitingOrder/pages/order/order",
+    "pengingInstallOrder/pages/index/index",
+    "completedOrder/pages/index/index",
+    "mine/pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#9D9D9D",
+    "selectedColor": "#349FFF",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "text": "待接单",
+        "pagePath": "waitingOrder/pages/index/index"
+      }, 
+      {
+        "text": "待完成",
+        "pagePath": "pengingInstallOrder/pages/index/index"
+      },
+      {
+        "text": "已完成",
+        "pagePath": "completedOrder/pages/index/index"
+      },
+      {
+        "text": "我的",
+        "pagePath": "mine/pages/index/index"
+      }
+    ]
+  },
+  "usingComponents": {
+    "order-form": "/components/form/form"
+  }
+}

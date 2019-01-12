@@ -1,0 +1,4 @@
+<view>
+  <order-form orderList="{{orderList}}">
+  </order-form>
+</view>
