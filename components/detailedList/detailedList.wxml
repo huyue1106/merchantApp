@@ -1,0 +1,15 @@
+<view>
+  <view class="form-cells" wx:for="{{detailed}}" wx:key="k" wx:for-item="i">
+    <view class="form-title">{{i.title}}</view>
+    <view class="form-cell" wx:for="{{i.detailedList}}" wx:key="index" wx:for-item="item">
+      <view class="form-ld">
+        <view form-label>{{item.label}}</view>
+      </view>
+      <view class="form-rd">
+        <view wx:if="{{!item.url}}">{{item.content}}</view>
+        <navigator wx:if="{{item.url}}" url="{{item.url}}">{{item.content}}</navigator>
+      </view>
+    </view>
+  </view>
+  <button>按钮啊</button>
+</view>

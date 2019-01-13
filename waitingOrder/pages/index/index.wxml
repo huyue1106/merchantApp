@@ -1,4 +1,6 @@
-<view class="page__bd">
+<view>
+  <!-- 搜索框 -->
+  <view class="page__bd">
     <view class="weui-search-bar">
       <view class="weui-search-bar__form">
         <view class="weui-search-bar__box">
@@ -37,7 +39,14 @@
         </view>
       </navigator>
     </view>
-    <button bindtap="openForm">打开表单</button>
-    <ording-form>
-    </ording-form>
   </view>
+  <!-- 列表 -->
+  <button bindtap="openForm">打开表单</button>
+  <button bindtap="openDetailed">打开详单</button>
+  <!-- 新增 -->
+  <view>
+    <view class="creatForm" bindtap="openCreat">
+      <image class="creatImg" src="../../../images/+.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+<view>
+  <view class="maintenance">
+    <navigator class="maintenanceRecord" open-type="switchTab" url="/completedOrder/pages/index/index">检修记录2条</navigator>
+  </view>
+  <form-common wx:if="{{!istearDown}}" list="{{list}}"></form-common>
+  <view wx:if="{{istearDown}}">
+    <image src=""></image>
+    <view>设备已拆除</view>
+  </view>
+</view>

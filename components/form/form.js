@@ -61,6 +61,13 @@ Component({
       this.setData({
         time: e.detail.value
       })
-    }
+    },
+    openToast: function () {
+      wx.showToast({
+        title: '已完成',
+        icon: 'success',
+        duration: 3000
+      });
+    },
   }
 })

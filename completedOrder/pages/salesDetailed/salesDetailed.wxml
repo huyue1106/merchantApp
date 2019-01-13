@@ -1,0 +1,3 @@
+<view>
+  <detailed-list detailed="{{detailed}}"></detailed-list>
+</view>

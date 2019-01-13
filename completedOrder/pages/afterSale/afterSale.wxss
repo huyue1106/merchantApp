@@ -1,0 +1,7 @@
+.maintenance {
+
+}
+.maintenanceRecord {
+  position: absolute;
+  right: 0;
+}

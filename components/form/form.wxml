@@ -1,10 +1,10 @@
 <!-- 组件模板 -->
 <form bindsubmit="formSubmit" bindreset="formReset">
-  <view wx:for="{{list}}" wx:key="k" wx:for-item="i">
+  <!-- <view > -->
+    <view class="form-cells" wx:for="{{list}}" wx:key="k" wx:for-item="i">
     <view class="form-title">{{i.title}}</view>
-    <view class="form-cells">
-      <view wx:for="{{i.childList}}" wx:key="index" wx:for-item="item">
-        <view class="form-cell">
+      <!-- <view> -->
+        <view class="form-cell" wx:for="{{i.childList}}" wx:key="index" wx:for-item="item">
           <view class="form-ld">
             <view form-label>{{item.label}}</view>
           </view>
@@ -54,11 +54,11 @@
             </radio-group>
           </view>
         </view>
-      </view>
+      <!-- </view> -->
     </view>
-  </view>
+  <!-- </view> -->
   <view class="btn-area">
-    <button wx:if="{{submit}}" form-type="submit">Submit</button>
+    <button class="weui-btn" type="primary" bindtap="openToast" wx:if="{{submit}}" form-type="submit">Submit</button>
     <button wx:if="{{reset}}" form-type="reset">Reset</button>
     <slot></slot>
   </view>

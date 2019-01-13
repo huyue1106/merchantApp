@@ -1,9 +1,12 @@
 {
   "pages": [
+    "completedOrder/pages/index/index",
+    "completedOrder/pages/afterSale/afterSale",
+    "completedOrder/pages/salesDetailed/salesDetailed",
     "waitingOrder/pages/index/index",
     "waitingOrder/pages/order/order",
+    "waitingOrder/pages/detailed/detailed",
     "pengingInstallOrder/pages/index/index",
-    "completedOrder/pages/index/index",
     "mine/pages/index/index"
   ],
   "window": {
@@ -36,6 +39,7 @@
     ]
   },
   "usingComponents": {
-    "order-form": "/components/form/form"
+    "form-common": "/components/form/form",
+    "detailed-list": "/components/detailedList/detailedList"
   }
 }

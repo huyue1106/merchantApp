@@ -1,0 +1,7 @@
+<view>
+<!-- 搜索框 -->
+<!-- 列表 -->
+<button bindtap="afterSale">售后按钮</button>
+<button bindtap="salsesDetailed">售后详情</button>
+<!-- 新增 -->
+</view>

@@ -1,5 +1,5 @@
 <!-- 组件模板 -->
-<order-form submit="{{submit}}" list="{{list}}">
+<form-common submit="{{submit}}" list="{{list}}">
   <button>aaaa</button>
   <button>bbbb</button>
-</order-form>
+</form-common>

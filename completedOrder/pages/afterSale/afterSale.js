@@ -1,16 +1,32 @@
-const app = getApp()
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    date: '',
-    time: '',
-    region: [],
-    submit: true,
+    istearDown: false,
     list: [
       {
         title: '订单详情',
         childList: [
           {
+            label: '售后类型',
+            name: 'afterSalesType',
+            isdisabled: false,
+            isRadio: true,
+            radioList: [
+              {
+                name: '1',
+                value: '更换车辆'
+              }, {
+                name: '2',
+                value: '更换车辆'
+              }, {
+                name: '3',
+                value: '更换车辆'
+              }
+            ]
+          }, {
             label: '店面名称',
             name: 'storeName',
             value: '深圳奥迪专卖店',
@@ -63,6 +79,12 @@ Page({
             isGeneral: true,
             placeholder: '请选择类型',
             array: ['美国', '中国', '巴西', '日本']
+          }, {
+            label: '检修原因',
+            name: 'maintenanceReasons',
+            isdisabled: false,
+            isTextarea: true,
+            placeholder: '请输入检修原因'
           }
         ]
       }, {
@@ -107,5 +129,7 @@ Page({
         ]
       }
     ]
-  }
+  },
+
+  
 })
