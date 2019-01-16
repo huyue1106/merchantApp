@@ -11,5 +11,7 @@
       </view>
     </view>
   </view>
-  <button>按钮啊</button>
+  <view>
+    <slot></slot>
+  </view>
 </view>

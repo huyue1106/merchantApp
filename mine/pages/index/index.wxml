@@ -1,7 +1,7 @@
 <view>
   <!-- 头像 -->
   <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_access">
+    <view class="weui-cell weui-cell_access" bindtap="storeDetailed">
       <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
         <image src="/images/+.png" style="width: 50px; height: 50px; display: block" />
         <!-- <view class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">8</view> -->

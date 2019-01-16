@@ -2,7 +2,66 @@
   <view class="maintenance">
     <navigator class="maintenanceRecord" open-type="switchTab" url="/completedOrder/pages/index/index">检修记录2条</navigator>
   </view>
-  <form-common wx:if="{{!istearDown}}" list="{{list}}"></form-common>
+  <form wx:if="{{!istearDown}}" bindsubmit="formSubmit" bindreset="formReset">
+    <view class="form-cells" wx:for="{{list}}" wx:key="k" wx:for-item="i">
+      <view class="form-title">{{i.title}}</view>
+      <view class="form-cell" wx:for="{{i.childList}}" wx:key="index" wx:for-item="item">
+        <view class="form-ld">
+          <view form-label>{{item.label}}</view>
+        </view>
+        <view wx:if="{{item.isInput}}" class="form-rd">
+          <input disabled="{{item.isdisabled}}" class="form-input" name="{{item.name}}" value="{{item.value}}" placeholder="{{item.placeholder}}"></input>
+        </view>
+        <!-- 日期picker -->
+        <view wx:if="{{item.isDate}}" class="form-rd">
+          <picker mode="date" name="{{item.name}}" start="{{item.startDate}}" end="{{item.endDate}}" bindchange="bindDateChange">
+            <input disabled placeholder="{{item.placeholder}}" value="{{date || item.value}}"></input>
+          </picker>
+        </view>
+        <!-- 时间picker -->
+        <view wx:if="{{item.isTime}}" class="form-rd">
+          <picker mode="time" name="{{item.name}}" start="{{item.startTime}}" end="{{item.endTime}}" bindchange="bindTimeChange">
+            <input disabled placeholder="{{item.placeholder}}" value="{{time || item.value}}"></input>
+          </picker>
+        </view>
+        <!-- 省市picker -->
+        <view wx:if="{{item.isCity}}" class="form-rd">
+          <picker mode="region" name="{{item.name}}" bindchange="bindRegionChange" value="{{item.value}}">
+            <input disabled placeholder="{{item.placeholder}}" value="{{region[0]||item.value[0]}}{{region[1]||item.value[1]}}{{region[2]||item.value[2]}}"></input>
+          </picker>
+        </view>
+        <!-- 普通picker -->
+        <view wx:if="{{item.isGeneral}}" class="form-rd">
+          <picker name="{{item.name}}" bindchange="bindPickerChange" range="{{item.array}}">
+            <input disabled placeholder="{{item.placeholder}}" value="{{item.array[j] || item.value}}"></input>
+          </picker>
+        </view>
+        <!-- 多列picker -->
+        <view wx:if="{{item.isMultiPicker}}" class="form-rd">
+          <picker mode="multiSelector" name="{{item.name}}" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+            <input disabled placeholder="{{item.placeholder}}" value="{{(multiArray[0][multiIndex[0]])||item.value[0]}}{{(multiArray[1][multiIndex[1]])||item.value[1]}}{{multiArray[2][multiIndex[2]]||item.value[2]}}"></input>
+          </picker>
+        </view>
+        <!-- textarea -->
+        <view wx:if="{{item.isTextarea}}" class="form-rd">
+          <textarea name="{{item.name}}" class="form-textarea" placeholder="{{item.placeholder}}" value="{{item.value}}" />
+        </view>
+        <!-- radio -->
+        <view wx:if="{{item.isRadio}}" class="form-rd">
+          <radio-group name="{{item.name}}" class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:key="idx" wx:for="{{item.radioList}}">
+              <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+            </label>
+          </radio-group>
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button class="weui-btn" type="primary" bindtap="openToast" form-type="submit">Submit</button>
+      <!-- <button form-type="reset">Reset</button> -->
+      <slot></slot>
+    </view>
+  </form>
   <view wx:if="{{istearDown}}">
     <image src=""></image>
     <view>设备已拆除</view>

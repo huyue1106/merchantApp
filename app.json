@@ -1,13 +1,13 @@
 {
   "pages": [
+    "mine/pages/index/index",
     "completedOrder/pages/index/index",
     "completedOrder/pages/afterSale/afterSale",
     "completedOrder/pages/salesDetailed/salesDetailed",
     "waitingOrder/pages/index/index",
     "waitingOrder/pages/order/order",
     "waitingOrder/pages/detailed/detailed",
-    "pengingInstallOrder/pages/index/index",
-    "mine/pages/index/index"
+    "pengingInstallOrder/pages/index/index"
   ],
   "window": {
     "backgroundTextStyle":"light",
