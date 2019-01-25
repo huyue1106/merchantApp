@@ -1,0 +1,8 @@
+<!-- 售后详情 -->
+<view>
+  <detailed-list detailed="{{detailed}}">
+  <view class="btn-area">
+    <button class="submit">取消申请</button>
+  </view>
+  </detailed-list>
+</view>

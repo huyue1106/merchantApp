@@ -1,13 +1,18 @@
 {
   "pages": [
-    "mine/pages/index/index",
+    "pages/login/login",
+    "pages/createOrder/createOrder",
+    "pages/order/order",
+    "pages/detailed/detailed",
+    "pages/changePassword/changePassword",
+    "waitingOrder/pages/index/index",
+    "pengingInstallOrder/pages/index/index",
     "completedOrder/pages/index/index",
     "completedOrder/pages/afterSale/afterSale",
-    "completedOrder/pages/salesDetailed/salesDetailed",
-    "waitingOrder/pages/index/index",
-    "waitingOrder/pages/order/order",
-    "waitingOrder/pages/detailed/detailed",
-    "pengingInstallOrder/pages/index/index"
+    "completedOrder/pages/afterSaleDetailed/afterSaleDetailed",
+    "completedOrder/pages/maintenanceRecord/maintenanceRecord",
+    "mine/pages/index/index",
+    "mine/pages/storeDetailed/storeDetailed"
   ],
   "window": {
     "backgroundTextStyle":"light",
@@ -22,24 +27,33 @@
     "list": [
       {
         "text": "待接单",
-        "pagePath": "waitingOrder/pages/index/index"
+        "pagePath": "waitingOrder/pages/index/index",
+        "iconPath": "images/icon_daijiedan_norm.png",
+        "selectedIconPath": "images/icon_daijiedan_highlight.png"
       }, 
       {
         "text": "待完成",
-        "pagePath": "pengingInstallOrder/pages/index/index"
+        "pagePath": "pengingInstallOrder/pages/index/index",
+        "iconPath": "images/icon_daiwancheng_norm.png",
+        "selectedIconPath": "images/icon_daiwancheng_highlight.png"
       },
       {
         "text": "已完成",
-        "pagePath": "completedOrder/pages/index/index"
+        "pagePath": "completedOrder/pages/index/index",
+        "iconPath": "images/icon_yiwancheng_norm.png",
+        "selectedIconPath": "images/icon_yiwancheng_highlight.png"
       },
       {
         "text": "我的",
-        "pagePath": "mine/pages/index/index"
+        "pagePath": "mine/pages/index/index",
+        "iconPath": "images/icon_my_norm.png",
+        "selectedIconPath": "images/icon_my_highlight.png"
       }
     ]
   },
   "usingComponents": {
-    "form-common": "/components/form/form",
-    "detailed-list": "/components/detailedList/detailedList"
+    "searchBox": "/components/searchBox/searchBox",
+    "detailed-list": "/components/detailedList/detailedList",
+    "blockList": "/components/blockList/blockList"
   }
 }

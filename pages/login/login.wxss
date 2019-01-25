@@ -1,0 +1,86 @@
+page {
+  background-color: #FFFFFF;
+}
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.login-content {
+  font-size: 36rpx;
+  margin: 0 40rpx;
+}
+
+.login-cell {
+  height: 88rpx;
+  width: 100%;
+  line-height: 88rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.login-cell:last-child {
+  border-bottom: none;
+}
+
+/* .login-cell::after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid #eee;
+} */
+
+.login-logo {
+  width: 430rpx;
+  height: 124rpx;
+  margin: 107rpx 160rpx 68rpx;
+}
+
+.login-icon {
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  vertical-align: middle;
+}
+
+.login-input {
+  /* flex-grow: 1; */
+  display: inline-block;
+  padding-left: 20rpx;
+  vertical-align: middle;
+  width: 550rpx;
+  overflow: hidden;
+}
+
+.login-forget-psw {
+  font-size: 28rpx;
+  color: #3da5f5;
+  float: right;
+}
+
+.btnBox {
+  margin-top: 10rpx;
+  text-align: center;
+}
+
+.btn {
+  margin: 30rpx;
+}
+
+.login-btn {
+  color: #fff;
+  background-color: #3da5f5;
+  z-index: 100;
+}
+
+.registered-btn {
+  color: #3da5f5;
+  background-color: #fff;
+}
+.login-bgImg {
+  position: fixed;
+  bottom: 0;
+  width: 660rpx;
+  height: 676rpx;
+}

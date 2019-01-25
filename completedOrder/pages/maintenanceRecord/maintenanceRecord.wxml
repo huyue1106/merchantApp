@@ -1,0 +1,9 @@
+<!-- 售后检修记录 -->
+<view>
+  <!-- 搜索框 -->
+  <searchBox bind:search="search"></searchBox>
+  <!-- 列表 -->
+  <view style="margin-top: 104rpx;">
+    <blockList orderMsg="{{orderMsg}}" bind:myevent="getBtn" pageTag="{{pageTag}}"></blockList>
+  </view>
+</view>

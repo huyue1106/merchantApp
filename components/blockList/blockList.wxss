@@ -1,0 +1,113 @@
+/* component/blockList/blockList.wxss */
+@import "../../style/weui.wxss";
+
+.blockList {
+  font-size: 32rpx;
+  color: #333333;
+  margin: 20rpx 24rpx;
+  background-color: #FFF;
+  border-radius: 10rpx;
+}
+/* 文字下沉 */
+.blockList .prl_20 {
+  padding: 0 20rpx;
+}
+.blockList .h_40 {
+  height: 40rpx;
+}
+/* top */
+.blockList .bl_top {
+  height: 88rpx;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #F0F0F0; 
+} 
+/* top-标签 */
+.blockList .type{
+  width: 164rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  margin-right: 20rpx;
+}
+.blockList .type view {
+  border-radius: 6rpx;
+}
+.blockList .type .tpInstall {
+  color: #4498DF;
+  background-color: #E7F6FF;
+}
+.blockList .type .tpRemove {
+  color: #EB671D;
+  background-color: #FFF1E9;
+}
+.blockList .type .tpRepair {
+  color: #3AB08A;
+  background-color: #E1FFF5;
+}
+/* top-取消按钮/字 */
+.blockList .cancel_icon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-top: 10rpx;
+}
+.blockList .cancel_txt {
+  color: #CCCCCC;
+  font-size: 28rpx;
+}
+/* below */
+.blockList .bl_below {
+  margin-top: 20rpx;
+}
+/* below-icon */
+.blockList .icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+/* below-详细 */
+.blockList .brand {
+  font-size: 36rpx;
+  color: rgba(51,51,51,1);
+  font-weight: bold;
+}
+.bl_below .detail {
+  color: rgba(51,51,51,1);
+}
+.bl_below .orderTime {
+  font-size: 28rpx;
+  color: #999999;
+}
+/* below-按钮 */
+.blockList .flex_end {
+  display: flex;
+  font-size: 28rpx;
+  justify-content: flex-end;
+  padding: 20rpx 0 30rpx;
+}
+.blockList .dataBtns .btns_item {
+  height: 58rpx;
+  line-height: 58rpx;
+  width: 160rpx;
+  margin-left: 20rpx;
+  text-align: center;
+}
+.blockList .dataBtns .btn_blue {
+  color: #3DA5F5;
+  border: 1rpx solid #3DA5F5;
+  border-radius: 4rpx;
+}
+.blockList .dataBtns .btn_orange {
+  color: #FFA732;
+  border: 1rpx solid #FFA732;
+  border-radius: 4rpx;
+}
+.orangeHover {
+  background-color: #fff4e6;
+}
+.blueHover {
+  background-color: #e9f5fe;
+
+}

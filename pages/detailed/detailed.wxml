@@ -1,0 +1,8 @@
+<!-- 订单详情 -->
+<view>
+  <detailed-list detailed="{{detailed}}" labelName="{{labelName}}">
+  <!-- <view class="btn-area">
+    <button class="submit">提交修改</button>
+  </view> -->
+  </detailed-list>
+</view>

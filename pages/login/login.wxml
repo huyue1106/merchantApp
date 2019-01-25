@@ -1,0 +1,28 @@
+<view class="login">
+  <image class="login-logo" src="../../images/logo.png"></image>
+  <view class="login-content">
+    <!-- 账号 -->
+    <view class="login-cell">
+      <image class="login-icon" src="../../images/number_icon.png "></image>
+      <input class="login-input" type="text" placeholder="请输入账号" placeholder-class="placeholder"></input>
+    </view>
+    <!-- 密码 -->
+    <view class="login-cell">
+      <image class="login-icon" src="../../images/password_icon.png "></image>
+      <input class="login-input" focus="{{focus}}" type="{{isView ? 'text' : 'password'}}"  value="{{password}}" placeholder="请输入密码" placeholder-class="placeholder"></input>
+      <image wx:if="{{!isView}}" class="login-icon" src="../../images/login_icon_hide.png" bindtap="pswShowOrHide"></image>
+      <image wx:if="{{isView}}" class="login-icon" src="../../images/login_icon_show.png" bindtap="pswShowOrHide"></image>
+    </view>
+    <view class="login-cell">
+      <view class="login-forget-psw" bindtap="forgetPassword">忘记密码？</view>
+    </view>
+  </view>
+  <!-- 忘记密码？ -->
+
+  <!-- 按钮 -->
+  <view class="btnBox">
+    <button class="btn login-btn" bindtap="login">登录</button>
+    <!-- <button class="btn registered-btn" bindtap="registered">注册技工</button> -->
+  </view>
+  <image class="login-bgImg" src="../../images/bg.png"></image>
+</view>

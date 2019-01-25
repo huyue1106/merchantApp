@@ -1,0 +1,52 @@
+<!--component/blockList/blockList.wxml-->
+<view wx:for="{{orderMsg}}" wx:for-index="idx" wx:key="id" class="blockList">
+  <view class="weui-flex bl_top prl_20">
+    <view class="type">
+      <view class="tpInstall" wx:if="{{item.orderType == 1}}">安装单</view>
+      <view class="tpRemove" wx:if="{{item.orderType == 2}}">拆除单</view>
+      <view class="tpRepair" wx:if="{{item.orderType == 3}}">检修单</view>
+    </view>
+    <view class="weui-flex__item">订单编号：{{item.orderNum}}</view>
+    <block wx:if="{{pageTag != '3'}}">
+      <view wx:if="{{item.cancel == 1}}" data-ordermsg="{{item}}" bindtap="orderDelete">
+          <image class="cancel_icon" src="../../images/icon_cancel.png"></image>
+        </view>
+      <text wx:else class="cancel_txt">已取消</text>
+    </block>
+  </view>
+  <view class="bl_below prl_20">
+    <view class="weui-flex">
+      <view class="below_left">
+        <image wx:if="{{item.serverType == 1}}" class="icon" src="../../images/icon_gps.png"></image>
+        <image wx:if="{{item.serverType == 2}}" class="icon" src="../../images/icon_cheji.png"></image>
+        <image wx:if="{{item.serverType == 3}}" class="icon" src="../../images/icon_houshijing.png"></image>
+        <image wx:if="{{item.serverType == 4}}" class="icon" src="../../images/icon_jiluyi.png"></image>
+      </view>
+      <view class="below_right">
+        <view class="brand">{{item.brand}}</view>
+        <view class="detail">{{item.detail}}</view>
+        <block>
+          <view wx:if="{{pageTag == 2}}">
+            <view wx:if="{{item.dateTime}}">已预约\t{{item.dateTime}}\t上门</view>
+            <view wx:else class="h_40"></view>
+          </view>
+          <view wx:if="{{pageTag == 3}}">
+            <view wx:if="{{item.time}}">已于\t{{item.time}}
+              <text wx:if="{{item.orderType == 1}}">完成安装</text>
+              <text wx:if="{{item.orderType == 2}}">完成拆除</text>
+              <text wx:if="{{item.orderType == 3}}">完成检修</text>
+            </view>
+            <view wx:else class="h_40"></view>
+          </view>
+        </block>
+        <view class="orderTime">{{item.orderTime}}</view>
+      </view>
+    </view>
+    <view class="flex_end dataBtns">
+      <view class="btns_item" wx:for="{{item.btns}}" wx:key="btnId" data-item="{{orderMsg[idx]}}" data-btn="{{item.name}}" bindtap="jumpPage">
+        <view wx:if="{{item.name == '订单详情'}}" class="btn_blue" hover-class="blueHover">{{item.name}}</view>
+        <view wx:else class="btn_orange" hover-class="orangeHover">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

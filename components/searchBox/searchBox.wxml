@@ -1,0 +1,9 @@
+<view class='search-box'>
+  <view class='search'>
+    <input placeholder='{{placeholder}}' confirm-type='search' type='text' bindconfirm='search' value='{{inputValue}}' bindinput='handleInput'></input>
+    <!-- <view class='search-img' bindtap="clear">
+      <image src='../../images/clear.png'></image>
+    </view> -->
+  </view>
+    <view class='search-btn' bindtap='search'>搜索</view>
+</view>
